@@ -1,7 +1,4 @@
-[https://youtu.be/kPRA0W1kECg?si=roHyZ4hVMTKDOm3g
-受該影片啟發而做的演算法visiualizer
-
->#Prerequisites](https://youtu.be/kPRA0W1kECg?si=roHyZ4hVMTKDOm3g<br>
+https://youtu.be/kPRA0W1kECg?si=roHyZ4hVMTKDOm3g<br>
 受該影片啟發而做的排序演算法visiualizer
 
 > # Prerequisites
