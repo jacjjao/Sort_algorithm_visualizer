@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.15)
 project(SortAlgorithmVisualizer)
 
-include(${CMAKE_CURRENT_SOURCE_DIR}/lib/Dependencies.cmake)
+include(lib/Dependencies.cmake)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -9,10 +9,12 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 file(GLOB_RECURSE SOURCES
-	src/*.cpp 
+	src/*.cpp
 )
 
 add_executable(${PROJECT_NAME} ${SOURCES})
+
+find_package(OpenGL REQUIRED)
 
 target_include_directories(${PROJECT_NAME} 
 	PRIVATE 
@@ -20,6 +22,7 @@ target_include_directories(${PROJECT_NAME}
 		sfml-graphics
 		sfml-window
 		sfml-audio
+		${OPENGL_LIBRARIES}
 )
 
 target_link_libraries(${PROJECT_NAME} 
@@ -28,6 +31,13 @@ target_link_libraries(${PROJECT_NAME}
 		sfml-graphics 
 		sfml-window
 		sfml-audio
+		${OPENGL_LIBRARIES}
+)
+
+target_include_directories(${PROJECT_NAME} 
+	PRIVATE 
+		src
+		src/imgui
 )
 
 if (WIN32)
